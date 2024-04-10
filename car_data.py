@@ -4,7 +4,7 @@ import pandas as pd
 # Load the dataset
 @st.cache
 def load_data():
-    data = pd.read_csv('/Users/yaoyuxin/Desktop/DSCI510/Lab12/car_data.csv')
+    data = pd.read_csv('Lab12/car_data.csv')
     return data
 
 data = load_data()
