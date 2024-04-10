@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 
 # Load the dataset
-@st.cache
 def load_data():
     data = pd.read_csv('Lab12/car_data.csv')
     return data
