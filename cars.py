@@ -3,7 +3,7 @@ import pandas as pd
 
 # Load the dataset
 def load_data():
-    data = pd.read_csv('/Users/yaoyuxin/desktop/DSCI510/Lab12/car_data.csv')
+    data = pd.read_csv('car_data.csv')
     return data
 
 data = load_data()
@@ -21,7 +21,6 @@ year_range = st.sidebar.slider('Year Range', 2000, 2024, (2000, 2024))
 
 # e. Submit button
 if st.sidebar.button('Submit'):
-    # Filter data based on selections
     filtered_data = data[data['Transmission'].isin(transmission_type) &
                          data['Selling_Price'].between(price_range[0], price_range[1]) &
                          data['Year'].between(year_range[0], year_range[1])]
@@ -31,5 +30,4 @@ if st.sidebar.button('Submit'):
     
     st.dataframe(filtered_data)
 else:
-    # If no filters are selected, show original data
     st.dataframe(data)
